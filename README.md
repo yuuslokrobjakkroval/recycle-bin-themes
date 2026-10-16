@@ -97,6 +97,14 @@ Requires Windows and PowerShell 5.1 or later. Extract the entire repository so t
    .\RecycleBinThemes.ps1
    ```
 
+   If **Run with PowerShell** shows an error or the window closes immediately, open PowerShell in the project folder and run:
+
+   ```powershell
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\RecycleBinThemes.ps1
+   ```
+
+   This overrides the execution policy for that process only and keeps any error messages visible in your PowerShell window.
+
 3. Enter the number beside your preferred theme.
 4. To restore the standard Windows icons, run the script again and choose **0 (Default)**.
 
@@ -107,12 +115,6 @@ If Windows blocks the downloaded script, open PowerShell in the extracted projec
 ~~~powershell
 Unblock-File .\RecycleBinThemes.ps1
 .\RecycleBinThemes.ps1
-~~~
-
-If script execution is disabled, you can run this copy with a policy override for that PowerShell process only:
-
-~~~powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\RecycleBinThemes.ps1
 ~~~
 
 Organization-managed policies may still prevent execution; use the manual option below in that case. Running from an existing PowerShell window also keeps error messages visible.
