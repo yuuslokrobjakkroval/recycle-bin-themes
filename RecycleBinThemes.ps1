@@ -1,5 +1,5 @@
 # Created by Siddharth Dushantha
-# https://github.com/sdushantha/recycle-bin-themes
+# https://github.com/yuuslokrobjakkroval/recycle-bin-themes
 #
 
 $version = "v1.0.1"
@@ -55,8 +55,8 @@ if ($choice -eq 0) {
 
 $selected_theme = $supported_themes[$choice-1]
 
-$empty_icon_url = "https://raw.githubusercontent.com/sdushantha/recycle-bin-themes/main/themes/$selected_theme/$selected_theme-empty.ico"
-$full_icon_url = "https://raw.githubusercontent.com/sdushantha/recycle-bin-themes/main/themes/$selected_theme/$selected_theme-full.ico"
+$empty_icon_url = "https://raw.githubusercontent.com/yuuslokrobjakkroval/recycle-bin-themes/main/themes/$selected_theme/$selected_theme-empty.ico"
+$full_icon_url = "https://raw.githubusercontent.com/yuuslokrobjakkroval/recycle-bin-themes/main/themes/$selected_theme/$selected_theme-full.ico"
 
 $empty_icon_file_name= $empty_icon_url.Split("/")[-1]
 $full_icon_file_name= $full_icon_url.Split("/")[-1]
