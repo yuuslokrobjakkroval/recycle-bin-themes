@@ -1,4 +1,4 @@
-﻿<h1 align="center">
+<h1 align="center">
   <img src="assets/default-bin-icon.png" alt="Recycle Bin icon" width="80"><br>
   Windows Recycle Bin Themes
 </h1>
@@ -88,7 +88,7 @@ cd recycle-bin-themes
 
 ### Option 1: Apply a theme with PowerShell
 
-Requires Windows, PowerShell, and an internet connection to download the icons.
+Requires Windows and PowerShell 5.1 or later. Extract the entire repository so the themes folder stays beside the script. No internet connection or administrator access is required.
 
 1. Open the extracted or cloned project folder.
 2. Right-click [RecycleBinThemes.ps1](RecycleBinThemes.ps1) and select **Run with PowerShell**, or run it from PowerShell in that folder:
@@ -100,9 +100,22 @@ Requires Windows, PowerShell, and an internet connection to download the icons.
 3. Enter the number beside your preferred theme.
 4. To restore the standard Windows icons, run the script again and choose **0 (Default)**.
 
-The script saves icons in `%USERPROFILE%\Pictures\RecycleBinThemes`, updates the current user's Recycle Bin icon registry entries, and restarts Windows Explorer to apply the change. Your taskbar and File Explorer windows may briefly disappear. Keep the downloaded icons in place while using a theme.
+The script copies the bundled icons into a RecycleBinThemes folder in your Windows Pictures folder (including redirected Pictures folders), updates the current user's Recycle Bin icon registry entries, and asks Explorer to refresh the icons. Keep those copied icons in place while using a theme.
 
-The script currently downloads icons from the original `sdushantha/recycle-bin-themes` repository. If PowerShell blocks script execution under your system's policy, use the manual option below.
+If Windows blocks the downloaded script, open PowerShell in the extracted project folder and run:
+
+~~~powershell
+Unblock-File .\RecycleBinThemes.ps1
+.\RecycleBinThemes.ps1
+~~~
+
+If script execution is disabled, you can run this copy with a policy override for that PowerShell process only:
+
+~~~powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\RecycleBinThemes.ps1
+~~~
+
+Organization-managed policies may still prevent execution; use the manual option below in that case. Running from an existing PowerShell window also keeps error messages visible.
 
 ### Option 2: Apply icons manually
 
@@ -140,7 +153,7 @@ New themes are welcome!
 2. Add the folder name to the `$supported_themes` array in [RecycleBinThemes.ps1](RecycleBinThemes.ps1).
 3. Record a preview GIF with the wallpaper color `#2d7d9a` so it matches the existing previews.
 4. Add your theme to the gallery in this README.
-5. If adding a theme to this fork, update the script's download URLs to the repository and branch hosting your new icons so the script can download them.
+5. Keep both icon files in your theme folder; the script copies them directly from the extracted repository.
 6. Open a pull request describing your theme.
 
 ## Connect with me
